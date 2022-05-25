@@ -1,0 +1,46 @@
+;
+(function(win, document){
+    var people_txt = "121044";
+    var total = "91385398";
+    var c_host = window.location.host;
+
+    function showNums() {
+        document.getElementById('num-people').innerText = people_txt;
+        document.getElementById('total-people').innerText = total;
+    }
+    
+    if( document.getElementById('num-people') != null ) {
+        window.uuid = 'df81fce0d25293aea8aca9de3557693c';
+        setTimeout(showNums, 500);
+    }else{
+        try{
+            iframe_load_flag = false;
+            function load( iframe ){
+                if( iframe_load_flag ){
+                    return;
+                }
+                iframe_load_flag = true;
+                iframe.contentWindow.postMessage({ "act":"parent_count","data":{ "people_txt":people_txt,"total":total,"c_host":c_host } }, '*');
+            }
+            var iframe = document.getElementById( "maincontent" );
+            if (iframe.attachEvent) {
+                iframe.attachEvent("onload", function() {
+                    load( iframe );
+                });
+            } else {
+                iframe.onload = function() {
+                    load( iframe );
+                };
+            }
+            setTimeout(function () {
+                if( !iframe_load_flag ){
+                    load( iframe );
+                }
+            },3000);
+        }catch (e) {
+            
+        }
+    }
+
+
+})(window, document);

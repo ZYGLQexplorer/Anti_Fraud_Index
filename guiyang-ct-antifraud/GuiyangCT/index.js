@@ -1,0 +1,1 @@
+window.addEventListener("message", function (t) { var e = t.data; e && e.hasOwnProperty("act") && "parent_count" == e.act && (document.getElementById("num-people").innerText = e.data.people_txt, document.getElementById("total-people").innerText = e.data.total, e.data.c_host && (document.getElementById("domain").value = e.data.c_host)) }, !1)

@@ -1,0 +1,230 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td,div {
+	margin:0;
+	padding:0;
+}
+body,button,input,select,textarea {
+	font:14px/1 Tahoma,Helvetica,Arial,"\5FAE\8F6F\96C5\9ED1",sans-serif;
+}
+h1 {
+	font-size:18px;
+	/* 18px / 12px = 1.5 */
+}
+h2 {
+	font-size:16px;
+}
+h3 {
+	font-size:14px;
+}
+h4,h5,h6 {
+	font-size:100%;
+}
+address,cite,dfn,em,var,i {
+	font-style:normal;
+}
+ul,ol {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:none;
+}
+fieldset,img {
+	border:none;
+}
+button,input,select,textarea {
+	outline:none;
+	font-size:100%;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+hr {
+	border:none;
+	height:1px;
+}
+.fr{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;}
+.fc{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;}
+.ac{-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.jc{-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
+.ja{justify-content: space-around;}
+.jw{justify-content: space-between;}
+.f1{-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+.f2{-webkit-box-flex: 1;-ms-flex: 2;flex: 2;}
+.jvc{display: flex; align-items: center;justify-content: center;}
+
+/*布局*/
+html, body{
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width: 100%;
+	min-height: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+/*小圆点*/
+.small-dot{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.y-dot{
+    background: #ffc13d;
+}
+.b-dot{
+    background: #85c4ff;
+}
+.r-dot{
+    background: #d72619;
+}
+/*4个角装饰*/
+i.j{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #1890ff;
+    position: absolute;
+}
+i.j:nth-of-type(1){
+    top: -1px;
+    left: -1px;
+    border-right: 0;
+    border-bottom: 0;
+}
+i.j:nth-of-type(2){
+    top: -1px;
+    right: -1px;
+    border-left: 0;
+    border-bottom: 0;
+}
+i.j:nth-of-type(3){
+    bottom: -1px;
+    left: -1px;
+    border-top: 0;
+    border-right: 0;
+}
+i.j:nth-of-type(4){
+    bottom: -1px;
+    right: -1px;
+    border-top: 0;
+    border-left: 0;
+}
+/*3角型*/
+/*三角形*/
+i.triangleup{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-bottom:10px solid #20d8fe;
+}
+i.triangledown{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:10px solid #20d8fe;
+}
+i.triangleleft{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-right:10px solid #20d8fe;
+}
+i.triangleright{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:10px solid #20d8fe;
+    margin-right: 4px;
+}
+i.triangleright.red{
+    border-left: 10px solid #fe4a20;
+}
+/*装饰小方块*/
+i.fk{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: #fa541c;
+}
+/*装饰小长条*/
+em.b{
+    display: inline-block;
+    width: 4px;
+    height: 8px;
+    background: #ff3a3a;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+em.b2{
+    background: #d0a591;
+}
+em.b3{
+    background: #6cc4ee;
+}
+/*一根柱状条，3:2:1 3种颜色*/
+.tiao3s{
+    height: 18px;
+    margin: 0 10px;
+    position: relative;
+    background: rgba(95, 143, 246, 0.1);
+}
+.tiao3s >span{
+    display: inline-block;
+    height: 8px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background: #20d8fe;
+    display: flex;
+}
+.tiao3s >span i:first-child{
+    flex: 3;
+}
+.tiao3s >span i:nth-child(2){
+    flex: 2;
+}
+.tiao3s >span i:nth-child(3){
+    flex: 1;
+}
+.tiao3s >span.b{
+    background: #20d8fe;
+}
+.tiao3s >span.b i:first-child{
+    background: #20d8fe;
+}
+.tiao3s >span.b i:nth-child(2){
+    background: #2cc6e6;
+}
+.tiao3s >span.b i:nth-child(3){
+    background: #3bb1c9;
+}
+.tiao3s >span.o{
+    background: #e84d4d;
+}
+.tiao3s >span.o i:first-child{
+    background: #e84d4d;
+}
+.tiao3s >span.o i:nth-child(2){
+    background: #e6692c;
+}
+.tiao3s >span.o i:nth-child(3){
+    background: #c9633b;
+}

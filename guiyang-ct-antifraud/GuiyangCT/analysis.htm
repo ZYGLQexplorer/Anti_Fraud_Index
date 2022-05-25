@@ -1,0 +1,32 @@
+;
+!function(win, doc) {
+    "use strict";
+    function getCookie(key) {
+        var arr,reg=new RegExp("(^| )"+key+"=([^;]*)(;|$)");
+        if(arr=doc.cookie.match(reg)){
+            return unescape(arr[2]);
+        }
+
+        return null;
+    }
+
+    function setCookie(key, value) {
+        var days = 360 * 10;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
+        doc.cookie = key + "="+ escape (value) + ";expires=" + exp.toGMTString();
+        return true;
+    }
+
+    var uuid = getCookie('analysis-uuid'),
+        head = document.getElementsByTagName('head')[0],
+        sc = document.createElement('script');
+
+    uuid = uuid != null ? uuid : 'df81fce0d25293aea8aca9de3557693c';
+    uuid = uuid.replace('-','').replace('{','').replace('}','');
+
+    setCookie('analysis-uuid', uuid);
+    // 统计.
+    sc.src = "https://api.110.cqqgsafe.com/7J6zvmx8Y/trace/count" + "?rf=" + encodeURIComponent( doc.referrer ) + "&uuid=" + uuid;
+    head.appendChild(sc);
+}(window, document);
